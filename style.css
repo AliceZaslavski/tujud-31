@@ -1,95 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
-
+/* Üldine seadistus */
 body {
-    font-family: 'Alice', serif;
-    background-color: white; /* Taust puhas valge */
+    font-family: 'Alice', sans-serif;
+    background-color: white; /* Kogu taust valgeks */
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
+/* Peamine konteiner */
 .container {
-    width: 70%;
-    max-width: 550px;
+    width: 50%;
+    max-width: 500px; /* Tõmbasin widgetit veel väiksemaks */
     margin: auto;
-    background: white;
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 0px; /* Kaotame eraldi kasti look'i */
+    box-shadow: none; /* Eemaldame varju */
+    background: white; /* Ühtlane taust */
 }
 
+/* Pealkiri väiksemaks */
 h1 {
-    font-size: 18px;
+    font-size: 20px; /* Veelgi väiksemaks */
+    font-weight: normal;
+    margin-bottom: 10px;
 }
 
-#calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-    justify-items: center;
-    margin: 15px auto;
-}
-
-.day {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
-}
-
-.day:hover {
-    transform: scale(1.1);
-}
-
-.selected {
-    border: 2px solid black;
-}
-
+/* Tujuvalikute nupud */
 #mood-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
+    gap: 5px; /* Väiksem vahe */
     margin-bottom: 10px;
 }
 
+/* Tujude nupud - veelgi väiksemaks */
 .mood-button {
+    padding: 4px 8px; /* Väiksemad nupud */
+    font-size: 12px; /* Väiksem font */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    width: 90px; /* Väiksem suurus */
-    padding: 3px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    gap: 3px;
-    background-color: #ddd;
-    font-size: 12px;
+    gap: 4px;
+    justify-content: space-between;
+    width: 110px; /* Kitsam */
 }
 
-.mood-button select, .mood-button input[type="color"] {
-    font-size: 10px;
-    border: none;
-    cursor: pointer;
+/* Kuupäeva ruudustik */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px; /* Väiksem vahe */
+    justify-items: center;
+    margin-top: 10px;
+}
+
+/* Kuupäeva ruudud suuremaks */
+.day {
+    width: 35px; /* Veidi suuremad */
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: white;
-    width: 30px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
 }
 
+/* Kui klõpsad päevale */
+.day.selected {
+    border: 2px solid black;
+}
+
+/* Salvesta nupp */
 #save-btn {
-    padding: 6px 10px;
-    font-size: 13px;
-    border: none;
-    border-radius: 5px;
+    background: #ffaa66;
+    color: white;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 3px;
     cursor: pointer;
-    background: #ffcc99;
-    font-weight: bold;
+    border: none;
+    margin-top: 8px;
 }
